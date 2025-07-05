@@ -91,7 +91,7 @@ public class SolutionAnalyzer
         var semanticModel = compilation.GetSemanticModel(AST);
         if (semanticModel == null)
         {
-            Console.WriteLine("\n^^^___^^^DEBUG SORIN^^^___^^^: Semantic model could not be created. Skipping analysis.");
+            Console.WriteLine("Semantic model could not be created. Skipping analysis.");
             return;
         }
         TraverseAST(root, commitCard, semanticModel, "");
@@ -220,8 +220,8 @@ public class SolutionAnalyzer
 
         }catch(Exception e)
         {
-            Console.WriteLine($"^^^___^^^DEBUG SORIN^^^___^^^: {e.Message}");
-            Console.WriteLine($"^^^___^^^DEBUG SORIN^^^___^^^: {e.StackTrace}");
+            Console.WriteLine($"{e.Message}");
+            Console.WriteLine($"{e.StackTrace}");
         }
         foreach (var child in node.ChildNodes())
         {

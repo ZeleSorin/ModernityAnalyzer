@@ -53,8 +53,8 @@ class Program
         }
         catch (Exception ex)
         {
-            Console.WriteLine($"^^^___^^^DEBUG SORIN^^^___^^^: 'An error occurred: {ex.Message}'");
-            Console.WriteLine($"^^^___^^^DEBUG SORIN^^^___^^^: 'An error occurred: {ex.StackTrace}'");
+            Console.WriteLine($"An error occurred: {ex.Message}");
+            Console.WriteLine($"An error occurred: {ex.StackTrace}");
             throw ex;
         }
     }

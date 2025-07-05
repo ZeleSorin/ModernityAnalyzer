@@ -49,7 +49,7 @@ public class Worker
             var paralelCounter = 0;
             if(commits.Last().Committer.When.DateTime < DateTime.UtcNow.AddYears(-1))
             {
-                Console.WriteLine($"\n^^^___^^^DEBUG SORIN^^^___^^^: Commits too old {commits.Last().Committer.When.DateTime} \n");
+                Console.WriteLine($"Commits too old {commits.Last().Committer.When.DateTime} \n");
                 return null;
             }
             Console.WriteLine($"Number of commits for repository: {repo.Name} is {commits.Count} and we are creating");
@@ -100,14 +100,14 @@ public class Worker
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine($"\n^^^___^^^DEBUG SORIN^^^___^^^: An error occurred while processing repository {repo.Name}: {ex.Message}");
-                    Console.WriteLine($"\n^^^___^^^DEBUG SORIN^^^___^^^: {ex.StackTrace}");
+                    Console.WriteLine($"An error occurred while processing repository {repo.Name}: {ex.Message}");
+                    Console.WriteLine($"{ex.StackTrace}");
             
                 }
             }
             if (paralelCounter == 0)
             {
-                Console.WriteLine($"\n^^^___^^^DEBUG SORIN^^^___^^^: No commit was analysed for this repo!!! {commitsDeck.Count}");
+                Console.WriteLine($"No commit was analysed for this repo!!! {commitsDeck.Count}");
                 return null;
             }
             //here save the results for the current repo
